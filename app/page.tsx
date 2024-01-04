@@ -1,6 +1,10 @@
+import Link from "next/link"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">hello world</main>
-  );
+    <main>
+      <h1>hello world</h1>
+      <Link href="/users">Users</Link>
+    </main>
+  )
 }
