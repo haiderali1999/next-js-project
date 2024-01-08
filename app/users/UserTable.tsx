@@ -17,7 +17,7 @@ const UserTable = async (props: Props) => {
   // const res = await fetch("https://jsonplaceholder.typicode.com/users",{cache:"no-store"})
 
   //revalidate after 10 second it is only availabel in fetch function not in 3rd party labraries
-  const res = await fetch("https://jsonplaceholder.typicode.com/userss", {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users", {
     next: { revalidate: 10 },
   });
   const userList: User[] = await res.json();
