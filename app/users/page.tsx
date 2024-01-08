@@ -10,6 +10,7 @@ const UserPage = async (props: Props) => {
   const {
     searchParams: { sortOrder },
   } = props;
+  debugger
   return (
     <>
       <h1>Users</h1>

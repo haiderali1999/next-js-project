@@ -13,6 +13,8 @@ interface Props {
 }
 
 const UserTable = async (props: Props) => {
+  debugger
+  const { sortOrder } = props;
   //frequently change data cache no store
   // const res = await fetch("https://jsonplaceholder.typicode.com/users",{cache:"no-store"})
 
@@ -21,7 +23,6 @@ const UserTable = async (props: Props) => {
     next: { revalidate: 10 },
   });
   const userList: User[] = await res.json();
-  const { sortOrder } = props;
   const sortedUsers = sort(userList).asc((u) =>
     sortOrder === "email" ? u.email : u.name
   );
@@ -31,10 +32,10 @@ const UserTable = async (props: Props) => {
         <thead>
           <tr className="hover">
             <th>
-              <Link href="/users?order=name">Name</Link>
+              <Link href="/users?sortOrder=name">Name</Link>
             </th>
             <th>
-              <Link href="/users?order=email">Email</Link>
+              <Link href="/users?sortOrder=email">Email</Link>
             </th>
           </tr>
         </thead>
