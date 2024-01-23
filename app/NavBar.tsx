@@ -23,8 +23,15 @@ const NavBar = () => {
         )}
         {status === "authenticated" && (
           <div className="">
-            <span className="text-slate-50 rounded-full bg-slate-400 px-3 py-2 mr-3 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500">{session.user!.name}</span>
-            <Link href="/api/auth/signout" className="text-slate-50 rounded-full bg-slate-400 px-3 py-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500">Sign Out</Link>
+            <span className="text-slate-50 rounded-full bg-slate-400 px-3 py-2 mr-3 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500">
+              {session.user!.name}
+            </span>
+            <Link
+              href="/api/auth/signout"
+              className="text-slate-50 rounded-full bg-slate-400 px-3 py-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500"
+            >
+              Sign Out
+            </Link>
           </div>
         )}
         {status === "unauthenticated" && (
